@@ -3,6 +3,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var fs=require("fs");
 function getEntry(files){
 	var entry={};
+	
 	for (var i=0;i<files.length;i++) {
 		var name=files[i].substr(0,(files[i].length-5));
 		entry[name]="./src/js/"+name+".js";
@@ -47,7 +48,7 @@ module.exports = {
 				test:/\.html$/,
 				loader:'html-loader'
 			},
-			{ test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader'},
+			{ test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=50000'},
 			//通过expose-loader将jquery组建暴露到全局变量中
 			{ 
 				test: require.resolve("jquery"), 

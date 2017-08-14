@@ -1,4 +1,347 @@
 body{
 	margin: 0;
-	background-color: red;
+}
+ul{
+	padding-left: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	width: 100%;
+	height: 72px;
+}
+.nav{
+	width: 990px;
+	height: 72px;
+	margin: 0 auto;
+}
+.nav h1 a{
+	color: red;
+	text-decoration: none;
+	margin-left: 5px;
+	float: left;
+}
+.nav-content li{
+	list-style: none;
+}
+.nav-content li a{
+	color: #666;
+    font-size: 18px;
+    float: left;
+    padding: 0 14px;
+    margin-right: 10px;
+	text-decoration: none;
+}
+.nav-content li a:hover{
+	color: red;
+}
+.nav-list{
+	margin-left: 160px;
+	margin-top: 27px;
+}
+.nav-right li{
+	float: right;
+}
+.nav-right li a{
+	color: #666;
+    font-size: 12px;
+	text-decoration: none;
+}
+.nav-right li{
+	list-style: none;
+}
+.lunBo1 .swiper-wrapper .swiper-slide a{
+	width: 100%;
+	height: 360px;
+}
+.main{
+	width: 80%;
+	margin: auto;
+}
+.main-content{
+	width: 990px;
+	margin: auto;
+	margin-top: 35px;
+	border-bottom: 1px #e5e5e5 solid;
+	line-height: 25px;
+}
+.main-left>a{
+	color: #3e3e3e;
+    border-bottom: 2px #eb002a solid;
+	text-decoration: none;
+}
+.main-left a{
+	color: #999;
+}
+.main-right{
+	float: right;
+}
+.main-right a{
+	color: red;
+	font-size: 12px;
+	text-decoration: none;
+}
+/*.main-list{
+	width: 990px;
+	height: 300px;
+	margin: auto;
+	border: 1px  solid rgba(255,255,255,0);
+}
+.main-list .bianJu{
+	margin-left: 40px;
+}*/
+.movie{
+	width: 990px;
+	height: 287px;
+	margin: auto;
+	margin-top: 18px;
+	border: 1px  solid rgba(255,255,255,0);
+	display: flex;
+	justify-content: space-between;
+}
+.movie .anNiuYanSe{
+	color: white;
+}
+.xuanZuoGouPiao{
+	width: 160px;
+	background-color: #EB002A;
+	color: #FFFFFF;
+	font-size: 12px;
+	padding-top: 17px;
+	padding-bottom: 10px;
+	margin: 0px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: -6px;
+}
+.xuanZuoGouPiao a{
+	text-decoration: none;
+	color: white;
+}
+.main-tu{
+	width: 100%;
+	background-color: #F4F4F4;
+}
+.step123{
+	width: 990px;
+	height: 88px;
+	margin: auto;
+}
+.content-list{
+	width: 990px;
+	margin: auto;
+	margin-top: 15px;
+}
+.more{
+	float: right;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight: 400;
+    color: #eb002a;
+}
+.content-list .left ul li{
+	margin-top: 15px;
+	border-bottom: 1px gray dotted;
+	padding: 20px 0px;
+}
+.content-list .left h4{
+	border-bottom: 1px gray solid;
+	padding: 10px 0px;
+}
+.daXiao{
+	color: #000000;
+	font-size: 16px;
+}
+.content-list .left ul li i{
+	display: block;
+    float: left;
+    width: 9px;
+    height: 9px;
+    margin-top: 7px;
+    background-image: url(/img/number.png);
+    background-repeat: no-repeat;
+}
+.content-list .left ul li i .i-1{
+	background-position: 0 0;
+}
+.content-list .left ul li .name{
+	float: left;
+    margin-left: 50px;
+    color: #3e3e3e;
+    width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+}
+.content-list .left ul li i .i-2{
+	background-position: 0 -42px;
+}
+.content-list .left .dxdx .buynow{
+	display: none;
+    margin-left: 15px;
+    width: 45%;
+    float: left;
+    -webkit-transform: translateY(0px)!important;
+    opacity: 1!important;
+}
+.content-list .left .dxdx .buy{
+	display: block;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    background: #eb002a;
+    color: #fff;
+}
+.content-list .right h4{
+	border-bottom: 1px gray solid;
+	padding: 10px 0px;
+}
+.content-list .right ul li{
+	border-bottom: 1px gray dotted;
+	padding: 11px 0px;
+}
+.content-list .right ul li i{
+	display: block;
+    float: left;
+    width: 9px;
+    height: 9px;
+    margin-top: 7px;
+    background-image: url(/img/number.png);
+    background-repeat: no-repeat;
+}
+.content-list .right ul li i .i-1{
+	background-position: 0 0;
+}
+.content-list .right ul li .name{
+	margin-left: 10px;
+    color: #3e3e3e;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    float: left;
+    width: 70%;
+    cursor: pointer;
+    font-size: 14px;
+}
+.content-list .right ul li .miaoShu{
+	display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 90%;
+    padding-left: 19px;
+    color: #888;
+}
+.content-list .right ul li .xuanZuo a{
+	display: block;
+    float: right;
+    padding: 0 5px;
+    margin-left: 5px;
+    line-height: 30px;
+    background-color: #eb002a;
+    color: #fff;
+}
+/*底部*/
+.footKuang{
+	clear: both;
+	background: #2b2b2b;
+    border-top: 2px #d21438 solid;
+    width: 100%;
+}
+#footWrap{
+	width: 990px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.footer{
+	width: 100%;
+	height: 260px;
+	background-color: #2B2B2B;
+	position: relative;
+}
+.footer .logo{
+	float: left;
+}
+.footer .logo .keFu{
+	font-size: 12px;
+	color:#9A9A9A;
+	margin-left: 25px;
+}
+.footer .logo .dianHua{
+	font-size: 12px;
+	color:#9A9A9A;
+	margin-left: 8px;
+}
+.footer .logo .tpp{
+	float: left;
+}
+.footer .logo dl{
+	float: left;
+	margin-left: 28px;
+	margin-top: 2px;
+}
+.footer .logo dl dt{
+	color: white;
+	font-size: 14px;
+	margin-left: 30px;
+}
+.footer .logo dl dd a{
+	text-decoration:none;
+	color: #9A9A9A;
+	font-size: 12px;
+}
+.footer .logo dl dd{
+	margin-top: 5px;
+	background-repeat: no-repeat;
+}
+.footer .logo dl .dian{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 10px;	
+	margin-left: 30px;
+}
+.footer .logo dl .dian .dian-div{
+	margin-right: 10px;
+}
+.footer .logo dl .dian .dian-div img{
+	height: 2px;
+	vertical-align: middle;
+}
+.footer .erWeiMa{
+	position: absolute;
+	left: 910px;
+	margin-top: 5px;
+}
+.footer .fenGeXian{
+	clear: both;
+	color:#666666;
+	font-size:10px;
+}
+.footer .albb .footer-ali{
+	margin-top: 14px;
+}
+.footer .albb .footer-ali a,b{
+	color: #666666;
+	font-size: 12px;
+	padding: 0px 1px;
+	text-decoration: none;
+}
+.footer .albb .foot-nav a,span{
+	color: #666666;
+	font-size: 12px;
+	padding: 0px 1px;
+	text-decoration: none;
+}
+.footer .albb .foot-nav{
+	margin-top: 15px;
+}
+.footer .jiQiRen{
+	padding-left: 948px;
+	margin-top: -65px;
 }
