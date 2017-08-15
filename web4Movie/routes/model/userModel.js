@@ -1,5 +1,5 @@
 var mysql=require("../database/dbConnect");
-var multiparty=require("multiparty");
+//var multiparty=require("multiparty");
 var path=require("path");
 var fs=require("fs");
 var userModel=function(){

@@ -1,4 +1,4 @@
-var mysql=require("../routes/dbConnect");
+var mysql=require("../database/dbConnect");
 var movieModel=function(){
 }
 module.exports=new movieModel();

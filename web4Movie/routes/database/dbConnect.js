@@ -1,5 +1,5 @@
 var mysql=require("mysql");
-var uuid=require("node-uuid")
+//var uuid=require("node-uuid");
 var dao=function(){
 	this.createServer=function(){
 		var client=createConnect({
