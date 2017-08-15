@@ -15890,12 +15890,6 @@ __webpack_require__ (41);
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(56);
-//监听socket传来的信息
-var socket = io.connect();
-socket.on('reload',function(){
-	//刷新网页
-	window.location.reload();
-});
 __webpack_require__(5);
 __webpack_require__(42);
 __webpack_require__(8);
