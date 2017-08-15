@@ -1,13 +1,10 @@
 require("../css/index.css");
-//require("../css/swiper-3.4.0.min.css");
-
 //监听socket传来的信息
 require("jquery");
 require("bootstrap");
 require("bootstrap-loader");
 require("swiper/dist/css/swiper.css");
-require("swiper/dist/js/swiper.jquery.js")
-
+require("swiper/dist/js/swiper.jquery.js");
 var s1=new Swiper("#lunBo1",{
 			autoplay:2000,
 			loop:true,//反向循环
@@ -31,34 +28,17 @@ var s1=new Swiper("#lunBo1",{
 			slidesPerView:1,//设置可以同时显示的滑块的数量 可以是number(数) auto(自动根据swiper的宽度显示多少块)
 			//flip表示翻转     fade表示淡入  cube表示3D翻转
 			//coverflow表示多边轮播一般配合slidesPerView:3和centeredSlides:true 使用
-		})
+		});
 		var lunbo=document.getElementById("lunBo1");
 		lunbo.onmouseover=function(){
 			var zuojiantou=document.getElementById("prevBtn");
 			var youjiantou=document.getElementById("nextBtn");
 			zuojiantou.style.display="block";
 			youjiantou.style.display="block";
-		}
+		};
 		lunbo.onmouseout=function(){
 			var zuojiantou=document.getElementById("prevBtn");
 			var youjiantou=document.getElementById("nextBtn");
 			zuojiantou.style.display="none";
 			youjiantou.style.display="none";
 		}
-		
-		onload=function(){
-            var dx=document.getElementById("dx");
-            var dxdx=document.getElementById("dxdx");
-            var a=dx.getElementsByTagName("a");
-            var imgs=dxdx.getElementsByTagName("img");
-            var last = 0;
-            for(var i=0;i<a.length;i++){
-                (function(i){
-                    a[i].onmouseover=function(){
-                        imgs[last].style.display="none";
-                        imgs[i].style.display="block";
-                        last=i;
-                    }
-                })(i);
-            }
-        }
