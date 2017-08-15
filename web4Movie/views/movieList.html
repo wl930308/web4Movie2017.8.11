@@ -3,8 +3,31 @@
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
-	<link href="http://192.168.0.187:3000/css/movieList.css" rel="stylesheet"></head>
+	<link href="http://localhost:3000/css/movieList.css" rel="stylesheet"></head>
 	<body>
-		123
-	<script type="text/javascript" src="http://192.168.0.187:3000/js/movieList.js"></script></body>
+		<table class="table table-responsive" border="0">
+	    <!--bg-primary 背景变蓝-->
+	    <thead class="bg-info">
+	    <th><input type="checkbox" checked="quanXuan">全选</th>
+	    <th>电影名</th>
+	    <th>电影简介</th>
+	    <th>放映日期</th>
+	    <th>图片</th>
+	    <th>操作</th>
+	    </thead>
+	    <tbody>
+	    <tr>
+	        <td><input type="checkbox" name="quanXuan"/></td>
+	        <td ></td>
+	        <td ></td>
+	        <td ></td>
+	        <td><img style="width: 100px;height: 100px"></td>
+	        <td ><a href="">修改</a> | <a href="">删除</a></td>
+	        <button class="btn btn-default pull-left">添加</button>
+            <button class="btn btn-default pull-right">删除多个</button>
+	    </tr>
+    </tbody>
+</table>
+	<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>	
+	<script type="text/javascript" src="http://localhost:3000/js/movieList.js"></script></body>
 </html>
