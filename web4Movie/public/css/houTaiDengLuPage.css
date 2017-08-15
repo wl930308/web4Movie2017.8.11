@@ -12,7 +12,6 @@ body{
 	width: 500px;
 	height: 280px;
 	text-align: center;
-	/*background-color: #517374;*/
 	background-color: rgba(255,255,255,0.1);
 	margin: 200px auto;
 }
@@ -36,7 +35,6 @@ body{
 .kg{
 	width: 370px;
 	background-color: #384F58;
-	/*border: none;*/
 }
 .btn{
 	margin-top: 10px;
