@@ -1,0 +1,46 @@
+html{
+	height: 100%;
+}
+body{
+	height: 100%;
+	margin: 0;
+	background-image: url(/img/houTaiBeiJing.jpg);
+	background-size: 100% 100%;
+	border-top: 1px solid rgba(0,0,0,0);
+}
+.main{
+	width: 500px;
+	height: 280px;
+	text-align: center;
+	/*background-color: #517374;*/
+	background-color: rgba(255,255,255,0.1);
+	margin: 200px auto;
+}
+.main .dengLu{
+	font-size: 20px;
+	color: white;
+	padding-top: 15px;
+}
+.xuanXiangKa{
+	margin-top: 25px;
+}
+.tab-content input{
+	padding: 5px 10px;
+}
+#jiaoShiDengLu{
+	margin-top: 15px;
+}
+#xueShengDengLu{
+	margin-top: 15px;
+}
+.kg{
+	width: 370px;
+	background-color: #384F58;
+	/*border: none;*/
+}
+.btn{
+	margin-top: 10px;
+}
+.ab{
+	margin: 0px 30px;
+}

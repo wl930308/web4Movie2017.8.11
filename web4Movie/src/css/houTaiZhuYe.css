@@ -1,0 +1,31 @@
+html{
+	height: 92%;
+}
+body{
+	height: 100%;
+}
+li{
+	cursor:pointer;
+}
+.lv-1 > li{
+	color: white;
+	border: none;
+	background-color: #222222;
+	padding: 25px;
+}
+.lv-2 > li{
+	color: white;
+	border: none;
+	padding-left: 30px;
+	background-color: #444444;
+}
+#clearPadding{
+	padding: 0px;
+}
+#clearPadding li{
+	border-radius: 0px;
+}
+#rightCe{
+	height: 100%;
+	padding: 0;
+}
