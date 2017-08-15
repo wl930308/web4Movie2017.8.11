@@ -11,7 +11,7 @@ var userAction=function(){
 		var password=req.body.password;
 		userModel.jiaoShiDengLuDongZuo(userName,password,function(result){
 			if(result.shu==1){
-				res.render("houTaiDengLuPage")
+				res.render("houTaiZhuYe")
 			}else{
 				alert("登录失败，请重新登录")
 			}
