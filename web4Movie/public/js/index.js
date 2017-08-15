@@ -57,10 +57,10 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "http://192.168.0.187:3000";
+/******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15872,16 +15872,23 @@ __webpack_require__ (41);
 /* 43 */,
 /* 44 */,
 /* 45 */,
-/* 46 */
+/* 46 */,
+/* 47 */,
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(47);
+__webpack_require__(49);
 //监听socket传来的信息
+var socket = io.connect();
+socket.on('reload',function(){
+	//刷新网页
+	window.location.reload();
+});
 __webpack_require__(5);
 __webpack_require__(8);
 __webpack_require__(21);
-__webpack_require__(48);
-__webpack_require__(49);
+__webpack_require__(50);
+__webpack_require__(51);
 var s1=new Swiper("#lunBo1",{
 			autoplay:2000,
 			loop:true,//反向循环
@@ -15921,19 +15928,19 @@ var s1=new Swiper("#lunBo1",{
 		}
 
 /***/ }),
-/* 47 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
 /* 49 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**

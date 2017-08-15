@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 52);
+/******/ 	return __webpack_require__(__webpack_require__.s = 55);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15868,7 +15868,12 @@ __webpack_require__ (41);
 
 
 /***/ }),
-/* 42 */,
+/* 42 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 43 */,
 /* 44 */,
 /* 45 */,
@@ -15878,10 +15883,13 @@ __webpack_require__ (41);
 /* 49 */,
 /* 50 */,
 /* 51 */,
-/* 52 */
+/* 52 */,
+/* 53 */,
+/* 54 */,
+/* 55 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(53);
+__webpack_require__(56);
 //监听socket传来的信息
 var socket = io.connect();
 socket.on('reload',function(){
@@ -15889,11 +15897,12 @@ socket.on('reload',function(){
 	window.location.reload();
 });
 __webpack_require__(5);
+__webpack_require__(42);
 __webpack_require__(8);
 __webpack_require__(21);
 
 /***/ }),
-/* 53 */
+/* 56 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
