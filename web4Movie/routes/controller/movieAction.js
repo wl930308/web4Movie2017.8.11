@@ -6,5 +6,8 @@ var movieAction=function(){
 	this.movieList=function(req,res){
 		res.render("movieList")
 	}
+	this.xuanzuoPage=function(req,res){
+		res.render("xuanzuoPage")
+	}
 }
 module.exports=new movieAction();
