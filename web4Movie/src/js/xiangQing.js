@@ -3,3 +3,15 @@ require("../css/xiangQing.css");
 require("jquery");
 require("bootstrap");
 require("bootstrap-loader");
+$.ajax({	
+	type:"POST",
+	url:"/xiangQingAction/selectXinXi",
+	dataType:"json",
+	data:{},
+	success:function(data){
+		$("#con_name").append(data.movie.movie_name)
+	},
+	error:function(){
+		alert("错误");
+	}
+});

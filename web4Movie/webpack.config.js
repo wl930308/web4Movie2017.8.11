@@ -32,7 +32,7 @@ module.exports = {
 	output:{
 		path:__dirname+"/public",
 		filename:"js/[name].js",
-		publicPath:"http://192.168.0.187:3000"
+		publicPath:"http://localhost:3000"
 	},
 	module:{
 		rules:[
