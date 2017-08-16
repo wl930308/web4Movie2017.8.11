@@ -1,10 +1,54 @@
 require("../css/index.css");
-//监听socket传来的信息
 require("jquery");
 require("bootstrap");
 require("bootstrap-loader");
 require("swiper/dist/css/swiper.css");
 require("swiper/dist/js/swiper.jquery.js");
+
+$.post("/indexAction/selectMovies",{},function(result){
+	var movies=result.movies
+	for(var i=0;i<movies.length;i++){
+		//获取div  
+        var div = document.getElementById("movie_for");  
+        //添加小div
+        var div2=document.createElement("div");
+        //把小div放在div中
+        div.appendChild(div2);
+        //在div2中添加id
+        div2.setAttribute('id',movies[i].movie_id);
+        //创建a标签
+        var a=document.createElement("a");
+        //把a标签放在div2中
+        div2.appendChild(a);
+        //给a标签动态添加属性
+        a.setAttribute('href','/movieAction/xiangQingPage?id='+movies[i].movie_id);
+        //创建img标签
+        var img=document.createElement("img");
+        //把img标签放在a标签中
+        a.appendChild(img);
+        //给img标签动态添加属性
+        img.setAttribute('src',movies[i].movie_photo);
+        //修改img标签样式
+        img.style.width="165px";
+        img.style.height="215px";
+        //获取p标签
+        var p=document.createElement("p");
+        //把p标签放在div2中
+        div2.appendChild(p);
+        //动态给p标签添加class
+        p.setAttribute('class','xuanZuoGouPiao');
+		//修改p样式
+        p.style.cssText="width:165px;background-color:#EB002A;color:#FFFFFF;font-size:12px;padding-top:17px;padding-bottom: 10px;margin: 0px;box-sizing: border-box;text-align:center;margin-top:-6px";
+        //
+        var a1=document.createElement("a");
+        p.appendChild(a1);
+        a1.setAttribute('href','#');
+        a1.setAttribute('class','anNiuYanSe');
+        a1.style.cssText="color:#fff;text-decoration: none"
+        a1.innerHTML="选座购票";
+	}
+},"json")
+
 var s1=new Swiper("#lunBo1",{
 			autoplay:2000,
 			loop:true,//反向循环
@@ -42,3 +86,5 @@ var s1=new Swiper("#lunBo1",{
 			zuojiantou.style.display="none";
 			youjiantou.style.display="none";
 		}
+		
+		

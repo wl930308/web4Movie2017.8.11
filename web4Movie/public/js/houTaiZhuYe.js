@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 46);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15870,16 +15870,12 @@ __webpack_require__ (41);
 /***/ }),
 /* 42 */,
 /* 43 */,
-/* 44 */
+/* 44 */,
+/* 45 */,
+/* 46 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(45);
-//监听socket传来的信息
-var socket = io.connect();
-socket.on('reload',function(){
-	//刷新网页
-	window.location.reload();
-});
+__webpack_require__(47);
 __webpack_require__(5);
 __webpack_require__(8);
 __webpack_require__(21);
@@ -15888,7 +15884,7 @@ $("#xiaLa").dropdown();
 
 
 /***/ }),
-/* 45 */
+/* 47 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

@@ -1,0 +1,216 @@
+body{
+	margin: 0;
+}
+ul{
+	padding-left: 0;
+}
+li{
+	list-style: none;
+}
+a{
+	text-decoration: none;
+}
+.header{
+	width: 100%;
+	height: 72px;
+}
+.nav{
+	width: 990px;
+	height: 72px;
+	margin: 0 auto;
+}
+.nav h1 a{
+	color: red;
+	text-decoration: none;
+	margin-left: 5px;
+	float: left;
+}
+.nav-content li{
+	list-style: none;
+}
+.nav-content li a{
+	color: #666;
+    font-size: 18px;
+    float: left;
+    padding: 0 14px;
+    margin-right: 10px;
+	text-decoration: none;
+}
+.nav-content li a:hover{
+	color: red;
+}
+.nav-list{
+	margin-left: 160px;
+	margin-top: 27px;
+}
+.nav-right li{
+	float: right;
+}
+.nav-right li a{
+	color: #666;
+    font-size: 12px;
+	text-decoration: none;
+}
+.nav-right li{
+	list-style: none;
+}
+
+.goupiaoLiucheng .dh{
+	width: 18%;
+	display:inline-block;
+	text-decoration: none;
+	margin: 1%;
+	padding:2%;
+	text-align: center;
+	color:gray;
+	text-align: center;
+	
+}
+.content{
+	border: 1px solid #E5E5E5;
+	margin: 0px 80px;
+	
+}
+
+/*选座css*/
+.demo{width:750px; margin:40px auto 0 auto; min-height:450px;}
+@media screen and (max-width: 360px) {.demo {width:340px}}
+
+.front{width: 300px;margin: 5px 32px 45px 32px;background-color: #f0f0f0;	color: #666;text-align: center;padding: 3px;border-radius: 5px;}
+.booking-details {float: right;position: relative;width:200px;height: 450px; }
+.booking-details h3 {margin: 5px 5px 0 0;font-size: 16px;}
+.booking-details p{line-height:26px; font-size:16px; color:#999}
+.booking-details p span{color:#666}
+div.seatCharts-cell {color: #182C4E;height: 25px;width: 25px;line-height: 25px;margin: 3px;float: left;text-align: center;outline: none;font-size: 13px;}
+div.seatCharts-seat {color: #fff;cursor: pointer;-webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px;}
+div.seatCharts-row {height: 35px;}
+div.seatCharts-seat.available {background-color: #B9DEA0;}
+div.seatCharts-seat.focused {background-color: #76B474;border: none;}
+div.seatCharts-seat.selected {background-color: #E6CAC4;}
+div.seatCharts-seat.unavailable {background-color: #472B34;cursor: not-allowed;}
+div.seatCharts-container {border-right: 1px dotted #adadad;width: 400px;padding: 20px;float: left;}
+div.seatCharts-legend {padding-left: 0px;position: absolute;bottom: 16px;}
+ul.seatCharts-legendList {padding-left: 0px;}
+.seatCharts-legendItem{list-style: none;float:left; width:90px;margin-top: 10px;line-height: 2;}
+span.seatCharts-legendDescription {margin-left: 5px;line-height: 30px;}
+.checkout-button {display: block;width:80px; height:24px; line-height:20px;margin: 10px auto;border:1px solid #999;font-size: 14px; cursor:pointer}
+#selected-seats {max-height: 150px;overflow-y: auto;overflow-x: none;width: 200px;}
+#selected-seats li{float:left; width:72px; height:26px; line-height:26px; border:1px solid #d3d3d3; background:#f7f7f7; margin:6px; font-size:14px; font-weight:bold; text-align:center}
+
+/*友情提示*/
+.tab1{
+	border: 1px solid #E5E5E5;
+	
+}
+
+.td1,.td2{
+	width: 594px;
+	background-color: #F7F7F7;
+	padding: 10px 20px;
+	font-size: 13px;
+	color: 666666;
+	
+	
+}
+.tab1 tr td b{
+	font-size: 13px;
+	color: 666666;
+}
+/*底部css*/
+.footKuang{
+	clear: both;
+	background: #2b2b2b;
+    border-top: 2px #d21438 solid;
+    width: 100%;
+}
+#footWrap{
+	width: 990px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
+.footer{
+	width: 100%;
+	height: 260px;
+	background-color: #2B2B2B;
+	position: relative;
+}
+.footer .logo{
+	float: left;
+}
+.footer .logo .keFu{
+	font-size: 12px;
+	color:#9A9A9A;
+	margin-left: 25px;
+}
+.footer .logo .dianHua{
+	font-size: 12px;
+	color:#9A9A9A;
+	margin-left: 8px;
+}
+.footer .logo .tpp{
+	float: left;
+}
+.footer .logo dl{
+	float: left;
+	margin-left: 28px;
+	margin-top: 2px;
+}
+.footer .logo dl dt{
+	color: white;
+	font-size: 14px;
+	margin-left: 30px;
+}
+.footer .logo dl dd a{
+	text-decoration:none;
+	color: #9A9A9A;
+	font-size: 12px;
+}
+.footer .logo dl dd{
+	margin-top: 5px;
+	background-repeat: no-repeat;
+}
+.footer .logo dl .dian{
+	display: flex;
+	justify-content: flex-start;
+	margin-top: 10px;	
+	margin-left: 30px;
+}
+.footer .logo dl .dian .dian-div{
+	margin-right: 10px;
+}
+.footer .logo dl .dian .dian-div img{
+	height: 2px;
+	vertical-align: middle;
+}
+.footer .erWeiMa{
+	position: absolute;
+	left: 910px;
+	margin-top: 5px;
+}
+.footer .fenGeXian{
+	clear: both;
+	color:#666666;
+	font-size:10px;
+}
+.footer .albb .footer-ali{
+	margin-top: 14px;
+}
+.footer .albb .footer-ali a,b{
+	color: #666666;
+	font-size: 12px;
+	padding: 0px 1px;
+	text-decoration: none;
+}
+.footer .albb .foot-nav a,span{
+	color: #666666;
+	font-size: 12px;
+	padding: 0px 1px;
+	text-decoration: none;
+}
+.footer .albb .foot-nav{
+	margin-top: 15px;
+}
+.footer .jiQiRen{
+	padding-left: 948px;
+	margin-top: -65px;
+}

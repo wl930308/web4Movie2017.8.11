@@ -12,11 +12,11 @@
 					<div class="nav-list">
 						<ul class="nav-content">
 							<li><a href="">哈尔滨</a></li>
-							<li><a href="">首页</a></li>
+							<li><a href="/">首页</a></li>
 							<li><a href="">影片</a></li>
 							<li><a href="">影院</a></li>
 							<li><a href="/userAction/houTaiDengLu">登录</a></li>
-							<li><a href="">注册</a></li>
+							<li><a href="/userAction/userZhuCePage">注册</a></li>
 						</ul>
 					</div>
 					<div class="nav-right">
@@ -52,27 +52,8 @@
 					</div>
 				</div>
 			</div>
-			<div class="movie">
-				<div>
-					<a href="/movieAction/xiangQingPage"><img src="/img/zhanlang2.jpg" alt="" style="width:160px;height:215px;"/></a>
-					<p class="xuanZuoGouPiao"><a href="#" class="anNiuYanSe">选座购票</a></p>
-				</div>
-				<div>
-					<img src="/img/sanshengsanshi.jpg" alt="" style="width:160px;height:215px;"/>
-					<p class="xuanZuoGouPiao"><a href="#" class="anNiuYanSe">选座购票</a></p>
-				</div>
-				<div>
-					<img src="/img/xinlizui.jpg" alt="" style="width:160px;height:215px;"/>
-					<p class="xuanZuoGouPiao"><a href="#" class="anNiuYanSe">选座购票</a></p>
-				</div>
-				<div>
-					<img src="/img/xiadaolianmeng.jpg" alt="" style="width:160px;height:215px;"/>
-					<p class="xuanZuoGouPiao"><a href="#" class="anNiuYanSe">选座购票</a></p>
-				</div>
-				<div>
-					<img src="/img/jianjundaye.jpg" alt="" style="width:160px;height:215px;"/>
-					<p class="xuanZuoGouPiao"><a href="#" class="anNiuYanSe">选座购票</a></p>
-				</div>
+			<div class="movie" id="movie_for">
+				
 			</div>
 			<div class="main-tu">
 				<div class="step123">
@@ -132,7 +113,7 @@
 							<i class="i-1"></i>
 							<a href="" class="name">恒大影城(哈尔滨绿洲店)</a><br />
 							<span class="miaoShu">松北区中源大道6611号恒大绿洲影城3层</span>
-							<span class="xuanZuo"><a href="">选坐</a></span>
+							<span class="xuanZuo"><a href="/movieAction/xuanzuoPage">选坐</a></span>
 						</li>
 						<li>
 							<i class="i-2"></i>
@@ -310,5 +291,6 @@
 				</div>
 			</div>
 		</div>
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="http://localhost:3000/js/index.js"></script></body>
 </html>

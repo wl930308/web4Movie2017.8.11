@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+	<!--	<meta name="viewport" content="width=device-width initial-scale=1.0">-->
+		<title></title>
+		<meta name="keywords" content="jQuery,选座">
+	</head>
+	<body>
+		<div class="">
+			<div class="header">
+				<div class="nav">
+					<h1><a href="">淘票票</a></h1>
+					<div class="nav-list">
+						<ul class="nav-content">
+							<li><a href="">哈尔滨</a></li>
+							<li><a href="/">首页</a></li>
+							<li><a href="">影片</a></li>
+							<li><a href="">影院</a></li>
+						</ul>
+					</div>
+					<div class="nav-right">
+						<ul>
+							<li><a href=""><img src="/img/keFu.png"/>客服资讯</a></li>
+							<li><a href=""><img src="/img/shouji.png" alt="" />手机购买</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<hr style="border: 1px solid #f2f2f2;"/>
+			<div class="content">
+				<div class="goupiaoLiucheng">
+					<a class="dh" href="">选择影票</a>
+					<a class="dh" href="">选座，填手机号</a>
+					<a class="dh" href="">确认订单，支付</a>
+					<a class="dh" href="">支付成功，影院取票观影</a> 			
+				</div>
+				<div class="zuoweiXiangqing">					
+					<div id="main">
+					  <div class="demo">
+					   		<div id="seat-map">
+								<div class="front">屏幕</div>	
+							</div>
+							<div class="booking-details">
+								<p>影片：<span>星际穿越</span></p>
+								<p>时间：<span>11月14日 21:00</span></p>
+								<p>座位：</p>
+								<ul id="selected-seats"></ul>
+								<p>票数：<span id="counter">0</span></p>
+								<p>总计：<b>￥<span id="total">0</span></b></p>
+								<button class="checkout-button">确定购买</button>
+								<div id="legend"></div>
+							</div>
+							<div style="clear:both"></div>
+					  </div>						
+					  <br/>
+					</div>
+				</div>
+				<div class="tishi">
+					<table border="" cellspacing="" cellpadding="" class="tab1">
+						<tr>
+							<td class="td1"><b>友情提示：</b><br />
+							1、下单前请仔细核对影片、影院、场次、手机号等信息。<br />
+							2、下单后请于15分钟内完成支付，超时系统将不保留座位。<br />
+							3、每笔订单最多可以选择4个座位，请选择连续的座位。<br />
+							4、电影票售出后暂不支持退换 。<br />
+							</td>
+							<td class="td2">
+								<b>代理商信息：</b><br />
+								满天星<br />
+								客服电话： 0571-88157838<br />
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<div class="footKuang">
+				<div class="footer clearfix" id="footWrap">
+					<div class="logo">
+						<div class="tpp">
+							<a href="#"><img src="/img/taoPiaoPiao.png"></a><br/>
+							<br/>
+							<span class="keFu">客服热线</span><br/>
+							<span class="dianHua">0571-88157838</span>
+						</div>
+						<dl>
+							<dt>选座购票流程</dt>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">选择影片和场次</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">选择中意的座位</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">支付并收到取票短信</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>取票流程</dt>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">收到取票短信</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">影院自助取票</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">短信重发方式</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>常见问题</dt>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">是否支持退换票</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">填错手机号怎么办</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">更多问题&gt;&gt;</a>
+							</dd>
+						</dl>
+						<dl>
+							<dt>协议规范</dt>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">用户服务协议</a>
+							</dd>
+							<dd class="dian">
+								<div id="" class="dian-div">
+									<img src="/img/foot_dian.png" alt=""/>
+								</div>
+								<a href="">食品管理规范</a>
+							</dd>
+						</dl>
+						<div class="erWeiMa">
+							<img src="/img/erWeiMa.png"/>
+						</div>
+					</div>
+					<div class="fenGeXian">
+						<p>....................................................................................................................................................................................................................................................................................................................................................................</p>
+					</div>
+					<div class="albb">
+						<div class="footer-ali">
+							<a href="">阿里巴巴集团</a>
+							<b>|</b>
+							<a href="">阿里巴巴国际站</a>
+							<b>|</b>
+							<a href="">阿里巴巴中国站</a>
+							<b>|</b>
+							<a href="">全球速卖通</a>
+							<b>|</b>
+							<a href="">淘宝网</a>
+							<b>|</b>
+							<a href="">天猫</a>
+							<b>|</b>
+							<a href="">聚划算</a>
+							<b>|</b>
+							<a href="">一淘</a>
+							<b>|</b>
+							<a href="">阿里妈妈</a>
+							<b>|</b>
+							<a href="">阿里云计算</a>
+							<b>|</b>
+							<a href="">云OS</a>
+							<b>|</b>
+							<a href="">万网</a>
+							<b>|</b>
+							<a href="">中国雅虎</a>
+							<b>|</b>
+							<a href="">支付宝</a>
+						</div>
+						<div class="foot-nav">
+							<a href="">关于淘宝</a>
+							<a href="">合作伙伴</a>
+							<a href="">营销中心</a>
+							<a href="">联系客服</a>
+							<a href="">开放平台</a>
+							<a href="">诚征英才</a>
+							<a href="">联系我们</a>
+							<a href="">网站地图</a>
+							<a href="">法律声明</a>
+							<span>&copy; 2017 Taopiaopiao.com 版权所有 沪B2-20170117 沪ICP备16050036号-1</span>
+						</div>
+					</div>
+					<div class="jiQiRen">
+						<img src="/img/jiQiRen.png" alt=""/>
+					</div>
+				</div>
+			</div>
+		</div>	
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>	
+	</body>
+</html>

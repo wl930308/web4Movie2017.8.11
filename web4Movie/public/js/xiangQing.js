@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 54);
+/******/ 	return __webpack_require__(__webpack_require__.s = 63);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15880,29 +15880,44 @@ __webpack_require__ (41);
 /* 51 */,
 /* 52 */,
 /* 53 */,
-/* 54 */
+/* 54 */,
+/* 55 */,
+/* 56 */,
+/* 57 */,
+/* 58 */,
+/* 59 */,
+/* 60 */,
+/* 61 */,
+/* 62 */,
+/* 63 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(55);
-//监听socket传来的信息
+__webpack_require__(64);
 __webpack_require__(5);
 __webpack_require__(8);
 __webpack_require__(21);
-$.ajax({	
-	type:"POST",
-	url:"/xiangQingAction/selectXinXi",
-	dataType:"json",
-	data:{},
-	success:function(data){
-		$("#con_name").append(data.movie.movie_name)
-	},
-	error:function(){
-		alert("错误");
-	}
-});
+//$.ajax({	
+//	type:"POST",
+//	url:"/xiangQingAction/selectXinXi",
+//	dataType:"json",
+//	data:{},
+//	success:function(data){
+//		$("#cont_name").html(data.movie.movie_name);
+//		$("#cont_biaoti").html(data.movie.movie_jianjie);
+//		$("#cont_biaoti").css('color','#fff');
+//		$("#cont_biaoti").css('font-size','16px');
+//		$("#cont_riQi").html(data.movie.fangyingriqi);
+//		$("#cont_riQi").css('color','#fff');
+//		$("#cont_tu1").attr('src',data.movie.movie_photo); 
+//	},
+//	error:function(){
+//		alert("错误");
+//	}
+//});
+
 
 /***/ }),
-/* 55 */
+/* 64 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

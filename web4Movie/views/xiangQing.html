@@ -12,7 +12,7 @@
 					<div class="nav-list">
 						<ul class="nav-content">
 							<li><a href="">哈尔滨</a></li>
-							<li><a href="">首页</a></li>
+							<li><a href="/">首页</a></li>
 							<li><a href="">影片</a></li>
 							<li><a href="">影院</a></li>
 						</ul>
@@ -27,18 +27,18 @@
 			</div>
 			<div class="jianJieWrap">
 				<div class="jianJie">
-					<h3 class="content-title" id="cont_name"></h3>
+					<h3 class="content-title" id="cont_name"><%=movies.movie_name%></h3>
 					<i>(Wolf Warriors ‖)</i>
 					<em class="score">9.6</em>
 				</div>
 				<div class="cont-main">
 					<div class="cont-pic" id="cont_tu">
-						<img src="/img/xiangQing.jpg"/>
+						<img src="<%=movies.movie_photo%>" id="cont_tu1"/>
 					</div>
-					<ul class="cont-info"  id="cont_ul">
+					<ul class="cont-info">
 						<li class="comment">
 							<em class="quot">“</em>
-							犯我中华者虽远必诛
+							<span id="cont_biaoti" style="color:#fff;font-size:14px"><%=movies.movie_jianjie%></span>
 							<em class="quot">”</em>
 						</li>
 						<li>导演：吴京</li>
@@ -50,7 +50,8 @@
 						<li>剧情介绍：冷锋（吴京 饰）突然被卷入了一场非洲国家叛乱，本可以安全撤离，却因无法忘记曾经为军人的使命，孤身犯险冲回沦陷区，带领身陷屠杀中的同胞和难民，展开生死逃亡。</li>
 					</ul>
 					<div class="cont-time">
-						上映时间：2017-07-27
+						上映时间：<%=movies.fangyingriqi%>
+						
 					</div>
 					<div class="cont-view">
 						<a href="" class="cont-right1">
@@ -58,7 +59,9 @@
 							<span>20</span>
 						</a>
 						<a href="" class="cont-right1">
-							<img src="/img/jianJieRight2.jpg" style="width: 160px;height: 110px;"/>
+							<video width="160" height="110" controls loop poster="/img/jianJieRight3.jpg">
+							    <source src="/img/movie.mp4" type="video/mp4">
+							</video>
 							<s></s>
 							<span>10</span>
 						</a>
@@ -316,5 +319,6 @@
 				</div>
 			</div>
 		</div>
+		<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript" src="http://localhost:3000/js/xiangQing.js"></script></body>
 </html>

@@ -103,10 +103,10 @@ a{
 	display: flex;
 	justify-content: space-between;
 }
-.movie .anNiuYanSe{
+/*.movie .anNiuYanSe{
 	color: white;
-}
-.xuanZuoGouPiao{
+}*/
+/*.xuanZuoGouPiao{
 	width: 160px;
 	background-color: #EB002A;
 	color: #FFFFFF;
@@ -117,7 +117,7 @@ a{
 	box-sizing: border-box;
 	text-align: center;
 	margin-top: -6px;
-}
+}*/
 .xuanZuoGouPiao a{
 	text-decoration: none;
 	color: white;

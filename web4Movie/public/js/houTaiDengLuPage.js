@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 42);
+/******/ 	return __webpack_require__(__webpack_require__.s = 44);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15868,22 +15868,18 @@ __webpack_require__ (41);
 
 
 /***/ }),
-/* 42 */
+/* 42 */,
+/* 43 */,
+/* 44 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(43);
-//监听socket传来的信息
-var socket = io.connect();
-socket.on('reload',function(){
-	//刷新网页
-	window.location.reload();
-});
+__webpack_require__(45);
 __webpack_require__(5);
 __webpack_require__(8);
 __webpack_require__(21);
 
 /***/ }),
-/* 43 */
+/* 45 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

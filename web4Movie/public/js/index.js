@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 46);
+/******/ 	return __webpack_require__(__webpack_require__.s = 48);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15872,16 +15872,62 @@ __webpack_require__ (41);
 /* 43 */,
 /* 44 */,
 /* 45 */,
-/* 46 */
+/* 46 */,
+/* 47 */,
+/* 48 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(47);
-//监听socket传来的信息
+__webpack_require__(49);
 __webpack_require__(5);
 __webpack_require__(8);
 __webpack_require__(21);
-__webpack_require__(48);
-__webpack_require__(49);
+__webpack_require__(50);
+__webpack_require__(51);
+
+$.post("/indexAction/selectMovies",{},function(result){
+	var movies=result.movies
+	for(var i=0;i<movies.length;i++){
+		//获取div  
+        var div = document.getElementById("movie_for");  
+        //添加小div
+        var div2=document.createElement("div");
+        //把小div放在div中
+        div.appendChild(div2);
+        //在div2中添加id
+        div2.setAttribute('id',movies[i].movie_id);
+        //创建a标签
+        var a=document.createElement("a");
+        //把a标签放在div2中
+        div2.appendChild(a);
+        //给a标签动态添加属性
+        a.setAttribute('href','/movieAction/xiangQingPage?id='+movies[i].movie_id);
+        //创建img标签
+        var img=document.createElement("img");
+        //把img标签放在a标签中
+        a.appendChild(img);
+        //给img标签动态添加属性
+        img.setAttribute('src',movies[i].movie_photo);
+        //修改img标签样式
+        img.style.width="165px";
+        img.style.height="215px";
+        //获取p标签
+        var p=document.createElement("p");
+        //把p标签放在div2中
+        div2.appendChild(p);
+        //动态给p标签添加class
+        p.setAttribute('class','xuanZuoGouPiao');
+		//修改p样式
+        p.style.cssText="width:165px;background-color:#EB002A;color:#FFFFFF;font-size:12px;padding-top:17px;padding-bottom: 10px;margin: 0px;box-sizing: border-box;text-align:center;margin-top:-6px";
+        //
+        var a1=document.createElement("a");
+        p.appendChild(a1);
+        a1.setAttribute('href','#');
+        a1.setAttribute('class','anNiuYanSe');
+        a1.style.cssText="color:#fff;text-decoration: none"
+        a1.innerHTML="选座购票";
+	}
+},"json")
+
 var s1=new Swiper("#lunBo1",{
 			autoplay:2000,
 			loop:true,//反向循环
@@ -15919,21 +15965,23 @@ var s1=new Swiper("#lunBo1",{
 			zuojiantou.style.display="none";
 			youjiantou.style.display="none";
 		}
-
-/***/ }),
-/* 47 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 48 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
+		
+		
 
 /***/ }),
 /* 49 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 50 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+/* 51 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /**
