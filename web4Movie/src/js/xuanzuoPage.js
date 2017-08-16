@@ -3,6 +3,7 @@ require("jquery");
 require("bootstrap");
 require("bootstrap-loader");
 require("./jquery.seat-charts.min.js")
+//
 var price = 80; //票价
 $(document).ready(function() {
 	var $cart = $('#selected-seats'), //座位区
@@ -12,14 +13,14 @@ $(document).ready(function() {
 		map: [  //座位图
 			'aaaaaaaaaa',
             'aaaaaaaaaa',
-            '__________',
-            'aaaaaaaa__',
+            '           ',
+            'aaaaaaaa  ',
             'aaaaaaaaaa',
 			'aaaaaaaaaa',
 			'aaaaaaaaaa',
 			'aaaaaaaaaa',
 			'aaaaaaaaaa',
-            'aa__aa__aa'
+            'aa  aa  aa'
 		],
 		naming : {
 			top : false,
@@ -31,7 +32,8 @@ $(document).ready(function() {
 			node : $('#legend'),
 			items : [
 				[ 'a', 'available',   '可选座' ],
-				[ 'a', 'unavailable', '已售出']
+				[ 'a', 'unavailable', '已售出'],
+				['a','selected','已选中']
 			]					
 		},
 		click: function () { //点击事件
