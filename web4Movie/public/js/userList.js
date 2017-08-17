@@ -15922,7 +15922,7 @@ $.ajax({
 			var td8 = tr.insertCell(7);
 			td8.innerHTML=result.jieGuo[i].user_tel;
 			var td9 = tr.insertCell(8);
-			td9.innerHTML="<a href='/userAction/userInsertPage'>添加</a>  |  <a href='/userAction/userEditPage'>修改</a>  |  <a>删除</a>";
+			td9.innerHTML="<a href='/userAction/userInsertPage'>添加</a>  |  <a href='/userAction/userEditPage'>修改</a>  |  <a href=''>删除</a>";
 			var as=document.getElementsByTagName("a");
 			as[i].style.color="white";
 //			td4.innerHTML="<img src='"+data.jieGuo[i].movie_photo+"'/>";
