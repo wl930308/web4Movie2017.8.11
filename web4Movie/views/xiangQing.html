@@ -25,7 +25,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="jianJieWrap">
+			<div class="jianJieWrap" id="jianjie1" style="display: block;">
 				<div class="jianJie">
 					<h3 class="content-title" id="cont_name"><%=movies.movie_name%></h3>
 					<i>(Wolf Warriors ‖)</i>
@@ -59,18 +59,32 @@
 							<span>20</span>
 						</a>
 						<a href="" class="cont-right1">
-							<video width="160" height="110" controls loop poster="/img/jianJieRight3.jpg">
-							    <source src="/img/movie.mp4" type="video/mp4">
-							</video>
-							<s></s>
+							<div   id="bofang">
+								<video id="shipin" width="160" height="110"   poster="/img/jianJieRight3.jpg">
+								    <source src="/img/movie.mp4" type="video/mp4">
+								</video>
+								<s id="anniu"></s>
+							</div>
 							<span>10</span>
 						</a>
 					</div>
 				</div>
+				<!--切换影片-->
+				<div id="qieHuanImg_span">
+					<div class="qieHuanYingPian move">
+						<img src="/img/切换影片.png"/>
+						<span class="qieHuanSpan" style="color:#f2f2f2;letter-spacing: 3px;">切换影片︾</span>
+					</div>
+				</div>
+			</div>
+			<div id="jianjie2" style="display: none;">
+				<div id="hui">
+					︽
+				</div>
 			</div>
 			<div class="title-wrap">
 				<div class="content-wrap">
-					<h3>选坐购票</h3>
+					<h3>选座购票</h3>
 				</div>
 			</div>
 			<div class="xuanZuoGouPiaoQu">
