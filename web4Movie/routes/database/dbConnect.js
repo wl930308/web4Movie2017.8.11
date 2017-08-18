@@ -40,7 +40,46 @@ var dao=function(){
 		client.query("SELECT * FROM USER",[],function(error,result){
 			callback(result)
 		})
+	};
+	
+	//下面是电影部分
+	//搜索电影
+	this.selectDianYing = function(client, callback) {
+		client.query("SELECT * FROM movie", function(error, result) {
+			callback(result);
+		})
+
+	};
+	//添加电影
+	this.insertDianYing = function(client, movie, cclj, callback) {
+		client.query("INSERT INTO movie (movie_id,movie_name, movie_jianjie, fangyingriqi, movie_photo) VALUES (?,?,?,?,?)", [uuid.v4(), movie.movie_name[0], movie.movie_jianjie[0], movie.fangyingriqi[0], cclj], function(error, result) {
+			callback(result.affectedRows);
+		})
+	};
+	//删除一个电影
+	this.deleteOneDianYing = function(client, id, callback) {
+		client.query("DELETE FROM movie WHERE movie_id = ?", [id], function(error, result) {
+			callback(result.affectedRows);
+		})
+	};
+	//删除多个
+	this.deleteManyDianYing = function(client, movieIdStr, callback) {
+		client.query("DELETE FROM MOVIE WHERE movie_id in (" + movieIdStr + ")", [], function(error, result) {
+			callback(result.affectedRows);
+		})
 	}
+	//修改回显
+	this.xiuGaiHuiXian = function(client, id, callback) {
+		client.query("SELECT * FROM movie WHERE movie_id=?", [id], function(error, result) {
+			callback(result);
+		})
+	};
+	//执行修改方法
+	this.dianyingxiugai = function(client, movie, cclj, callback) {
+		client.query("UPDATE movie SET movie_name =?,movie_jianjie =?,fangyingriqi=?,movie_photo=? WHERE movie_id =?", [movie.movie_name, movie.movie_jianjie, movie.fangyingriqi, cclj, movie.movie_id], function(error, result) {
+			callback(result.affectedRows);
+		})
+	};
 
 }
 module.exports=new dao();
