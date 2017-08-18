@@ -15908,7 +15908,6 @@ $("#hui").on('click',function(){
 	$("#jianjie2").css('display','none'); 
 })
 
-
 var gq=$("#bofang").click(function(){
 var video=document.getElementById("shipin")
 var bofang=document.getElementById("bofang")

@@ -73,8 +73,8 @@ a{
 	/*字体竖着排列*/
 	writing-mode:tb-rl;
 	position: absolute;
-	top:50px;
-	right:0px;
+	top:40px;
+	right:10px;
 }
 #jianjie2{
 	width:100%;
@@ -86,13 +86,18 @@ a{
 	width:30px;
 	cursor:pointer;
 	height:30px;
-	border:1px solid #fff;
+	border:1px solid #A7909D;
 	position: absolute;
 	right:180px;
 	bottom:10px;
-	color:#f2f2f2;
+	color:#A7909D;
+	font-size:18px;
 	line-height:30px;
 	text-align: center;
+}
+#hui:hover{
+	border:1px solid #D1B9C6;
+	color:#D1B9C6;
 }
 #qieHuanImg_span{
 	cursor: pointer;

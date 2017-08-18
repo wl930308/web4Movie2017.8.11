@@ -144,6 +144,7 @@ a{
     color: #eb002a;
 }
 .content-list .left ul li{
+	cursor: pointer;
 	margin-top: 15px;
 	border-bottom: 1px gray dotted;
 	padding: 20px 0px;
@@ -203,6 +204,8 @@ a{
 	padding: 10px 0px;
 }
 .content-list .right ul li{
+	margin-bottom: 10px;
+	cursor: pointer;
 	border-bottom: 1px gray dotted;
 	padding: 11px 0px;
 }

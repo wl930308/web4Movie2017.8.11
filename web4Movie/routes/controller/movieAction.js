@@ -14,5 +14,8 @@ var movieAction=function(){
 	this.xuanzuoPage=function(req,res){
 		res.render("xuanzuoPage")
 	}
+	this.quXuanZuo=function(req,res){
+		res.render("xuanzuoPage")
+	}
 }
 module.exports=new movieAction();

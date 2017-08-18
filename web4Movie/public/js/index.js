@@ -15884,6 +15884,122 @@ __webpack_require__(21);
 __webpack_require__(50);
 __webpack_require__(51);
 
+$("#xuanpiao_zl").on('click',function(){
+		location.href="/movieAction/xiangQingPage?id=1"
+})
+//index左侧js效果    上周影片排行
+$("#d1-x").on('mouseover',function(){
+	$('#dx1-x').css('display','none');
+	$('#dx1-d').css('display','block');
+	$('#dx2-x').css('display','block');
+	$('#dx2-d').css('display','none');
+	$('#dx3-x').css('display','block');
+	$('#dx3-d').css('display','none');
+	$('#dx4-x').css('display','block');
+	$('#dx4-d').css('display','none');
+	$('#dx5-x').css('display','block');
+	$('#dx5-d').css('display','none');
+})
+$("#d2-x").on('mouseover',function(){
+	$('#dx1-x').css('display','block');
+	$('#dx1-d').css('display','none');
+	$('#dx2-x').css('display','none');
+	$('#dx2-d').css('display','block');
+	$('#dx3-x').css('display','block');
+	$('#dx3-d').css('display','none');
+	$('#dx4-x').css('display','block');
+	$('#dx4-d').css('display','none');
+	$('#dx5-x').css('display','block');
+	$('#dx5-d').css('display','none');
+})
+$("#d3-x").on('mouseover',function(){
+	$('#dx1-x').css('display','block');
+	$('#dx1-d').css('display','none');
+	$('#dx2-x').css('display','block');
+	$('#dx2-d').css('display','none');
+	$('#dx3-d').css('display','block');
+	$('#dx3-x').css('display','none');
+	$('#dx4-x').css('display','block');
+	$('#dx4-d').css('display','none');
+	$('#dx5-x').css('display','block');
+	$('#dx5-d').css('display','none');
+})
+$("#d4-x").on('mouseover',function(){
+	$('#dx1-x').css('display','block');
+	$('#dx1-d').css('display','none');
+	$('#dx2-x').css('display','block');
+	$('#dx2-d').css('display','none');
+	$('#dx3-x').css('display','block');
+	$('#dx3-d').css('display','none');
+	$('#dx4-d').css('display','block');
+	$('#dx4-x').css('display','none');
+	$('#dx5-x').css('display','block');
+	$('#dx5-d').css('display','none');
+})
+
+$("#d5-x").on('mouseover',function(){
+	$('#dx1-x').css('display','block');
+	$('#dx1-d').css('display','none');
+	$('#dx2-x').css('display','block');
+	$('#dx2-d').css('display','none');
+	$('#dx3-x').css('display','block');
+	$('#dx3-d').css('display','none');
+	$('#dx4-x').css('display','block');
+	$('#dx4-d').css('display','none');
+	$('#dx5-d').css('display','block');
+	$('#dx5-x').css('display','none');
+})
+
+//index右侧js效果   热门影院排行
+var xuanZuo=document.getElementsByClassName('xuanZuo');
+$("#cont_li1").on('mouseover',function(){
+	xuanZuo[0].style.display="block";
+	xuanZuo[1].style.display="none";
+	xuanZuo[2].style.display="none";
+	xuanZuo[3].style.display="none";
+	xuanZuo[4].style.display="none";
+	xuanZuo[5].style.display="none";
+})
+$("#cont_li2").on('mouseover',function(){
+	xuanZuo[1].style.display="block";
+	xuanZuo[0].style.display="none";
+	xuanZuo[2].style.display="none";
+	xuanZuo[3].style.display="none";
+	xuanZuo[4].style.display="none";
+	xuanZuo[5].style.display="none";
+})
+$("#cont_li3").on('mouseover',function(){
+	xuanZuo[2].style.display="block";
+	xuanZuo[0].style.display="none";
+	xuanZuo[3].style.display="none";
+	xuanZuo[1].style.display="none";
+	xuanZuo[4].style.display="none";
+	xuanZuo[5].style.display="none";
+})
+$("#cont_li4").on('mouseover',function(){
+	xuanZuo[3].style.display="block";
+	xuanZuo[0].style.display="none";
+	xuanZuo[2].style.display="none";
+	xuanZuo[4].style.display="none";
+	xuanZuo[1].style.display="none";
+	xuanZuo[5].style.display="none";
+})
+$("#cont_li5").on('mouseover',function(){
+	xuanZuo[4].style.display="block";
+	xuanZuo[0].style.display="none";
+	xuanZuo[2].style.display="none";
+	xuanZuo[3].style.display="none";
+	xuanZuo[1].style.display="none";
+	xuanZuo[5].style.display="none";
+})
+$("#cont_li6").on('mouseover',function(){
+	xuanZuo[5].style.display="block";
+	xuanZuo[0].style.display="none";
+	xuanZuo[2].style.display="none";
+	xuanZuo[3].style.display="none";
+	xuanZuo[1].style.display="none";
+	xuanZuo[4].style.display="none";
+})
 $.post("/indexAction/selectMovies",{},function(result){
 	var movies=result.movies
 	for(var i=0;i<movies.length;i++){
@@ -15894,6 +16010,7 @@ $.post("/indexAction/selectMovies",{},function(result){
         //把小div放在div中
         div.appendChild(div2);
         //在div2中添加id
+        var id=movies[i].movie_id
         div2.setAttribute('id',movies[i].movie_id);
         //创建a标签
         var a=document.createElement("a");
@@ -15927,7 +16044,6 @@ $.post("/indexAction/selectMovies",{},function(result){
         a1.innerHTML="选座购票";
 	}
 },"json")
-
 var s1=new Swiper("#lunBo1",{
 			autoplay:2000,
 			loop:true,//反向循环
