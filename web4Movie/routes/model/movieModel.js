@@ -32,23 +32,32 @@ var movieModel = function() {
 				console.info(err)
 			} else {
 				var inputFile = files.inputFile[0];
+				var cclj = "";
+				if(inputFile.originalFilename == "") {
+					cclj = fields.photoBeiYong[0];
+				} else {
+					var oldPath = inputFile.path;
+					var newPath = upLuJing + inputFile.originalFilename;
+					fs.rename(oldPath, newPath, function(err) {
+						if(err) {
+							console.info(err)
+						} else {
 
-				var oldPath = inputFile.path;
+							console.log('rename OK');
+						}
+					})
+					cclj = "/files/" + inputFile.originalFilename;
 
-				var newPath = upLuJing + inputFile.originalFilename;
+				}
+
 				//把储存的图片改名
-				fs.rename(oldPath, newPath, function(err) {
-					if(err) {
-						console.info(err)
-					} else {
-						var client = mysql.createServer();
-						var movie = fields;
-						var cclj = "/files/" + inputFile.originalFilename;
-						mysql.insertDianYing(client, movie, cclj, function(result) {
-							callback(result)
-						})
-					}
+				var client = mysql.createServer();
+				var movie = fields;
+
+				mysql.insertDianYing(client, movie, cclj, function(result) {
+					callback(result)
 				})
+
 			}
 		})
 	};
