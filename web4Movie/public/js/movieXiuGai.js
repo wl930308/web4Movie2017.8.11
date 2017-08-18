@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 70);
+/******/ 	return __webpack_require__(__webpack_require__.s = 57);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15869,7 +15869,54 @@ __webpack_require__ (41);
 
 /***/ }),
 /* 42 */,
-/* 43 */,
+/* 43 */
+/***/ (function(module, exports) {
+
+/**
+ * Created by Administrator on 2017/4/10.
+ */
+window.change=function() {
+    var pic = document.getElementById("preview"),
+        file = document.getElementById("shenfen");
+    var ext=file.value.substring(file.value.lastIndexOf(".")+1).toLowerCase();
+
+    // gif在IE浏览器暂时无法显示
+    if(ext!='png'&&ext!='jpg'&&ext!='jpeg'){
+        alert("图片的格式必须为png或者jpg或者jpeg格式！");
+        return;
+    }
+    var isIE = navigator.userAgent.match(/MSIE/)!= null,
+        isIE6 = navigator.userAgent.match(/MSIE 6.0/)!= null;
+
+    if(isIE) {
+        file.select();
+        var reallocalpath = document.selection.createRange().text;
+
+        // IE6浏览器设置img的src为本地路径可以直接显示图片
+        if (isIE6) {
+            pic.src = reallocalpath;
+        }else {
+            // 非IE6版本的IE由于安全问题直接设置img的src无法显示本地图片，但是可以通过滤镜来实现
+            pic.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='image',src=\"" + reallocalpath + "\")";
+            // 设置img的src为base64编码的透明图片 取消显示浏览器默认图片
+            pic.src = 'data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==';
+        }
+    }else {
+        html5Reader(file);
+    }
+}
+
+function html5Reader(file){
+    var file = file.files[0];
+    var reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = function(e){
+        var pic = document.getElementById("preview");
+        pic.src=this.result;
+    }
+}
+
+/***/ }),
 /* 44 */,
 /* 45 */,
 /* 46 */,
@@ -15883,116 +15930,24 @@ __webpack_require__ (41);
 /* 54 */,
 /* 55 */,
 /* 56 */,
-/* 57 */,
-/* 58 */,
-/* 59 */,
-/* 60 */,
-/* 61 */,
-/* 62 */,
-/* 63 */,
-/* 64 */,
-/* 65 */,
-/* 66 */,
-/* 67 */,
-/* 68 */,
-/* 69 */,
-/* 70 */
+/* 57 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(71);
 __webpack_require__(5);
-__webpack_require__(8);
+__webpack_require__(58);
+__webpack_require__(43);
+__webpack_require__(8); 
 __webpack_require__(21);
-__webpack_require__(72)
-//
-var price = 80; //票价
-$(document).ready(function() {
-	var $cart = $('#selected-seats'), //座位区
-	$counter = $('#counter'), //票数
-	$total = $('#total'); //总计金额
-	var sc = $('#seat-map').seatCharts({
-		map: [  //座位图
-			'aaaaaaaaaa',
-            'aaaaaaaaaa',
-            '           ',
-            'aaaaaaaa  ',
-            'aaaaaaaaaa',
-			'aaaaaaaaaa',
-			'aaaaaaaaaa',
-			'aaaaaaaaaa',
-			'aaaaaaaaaa',
-            'aa  aa  aa'
-		],
-		naming : {
-			top : false,
-			getLabel : function (character, row, column) {
-				return column;
-			}
-		},
-		legend : { //定义图例
-			node : $('#legend'),
-			items : [
-				[ 'a', 'available',   '可选座' ],
-				[ 'a', 'unavailable', '已售出'],
-				['a','selected','已选中']
-			]					
-		},
-		click: function () { //点击事件
-			if (this.status() == 'available') { //可选座
-				$('<li>'+(this.settings.row+1)+'排'+this.settings.label+'座</li>')
-					.attr('id', 'cart-item-'+this.settings.id)
-					.data('seatId', this.settings.id)
-					.appendTo($cart);
-				$counter.text(sc.find('selected').length+1);
-				$total.text(recalculateTotal(sc)+price);
-				return 'selected';
-			} else if (this.status() == 'selected') { //已选中
-					//更新数量
-					$counter.text(sc.find('selected').length-1);
-					//更新总计
-					$total.text(recalculateTotal(sc)-price);
-					//删除已预订座位
-					$('#cart-item-'+this.settings.id).remove();
-					//可选座
-					return 'available';
-			} else if (this.status() == 'unavailable') { //已售出
-				return 'unavailable';
-			} else {
-				return this.style();
-			}
-		}
-	});
-	//已售出的座位
-	sc.get(['1_2', '4_4','4_5','6_6','6_7','8_5','8_6','8_7','8_8', '10_1', '10_2']).status('unavailable');
-});
-//计算总金额
-function recalculateTotal(sc) {
-	var total = 0;
-	sc.find('selected').each(function () {
-		total += price;
-	});	
-	return total;
-}
+
+
+
+
 
 /***/ }),
-/* 71 */
+/* 58 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 72 */
-/***/ (function(module, exports) {
-
-/*!
- * jQuery-Seat-Charts v1.1.1
- * https://github.com/mateuszmarkowski/jQuery-Seat-Charts
- *
- * Copyright 2013, 2014 Mateusz Markowski
- * Released under the MIT license
- */
- 
-(function(e){e.fn.seatCharts=function(t){if(this.data("seatCharts")){return this.data("seatCharts")}var n=this,r={},i=[],s,o={animate:false,naming:{top:true,left:true,getId:function(e,t,n){return t+"_"+n},getLabel:function(e,t,n){return n}},legend:{node:null,items:[]},click:function(){if(this.status()=="available"){return"selected"}else if(this.status()=="selected"){return"available"}else{return this.style()}},focus:function(){if(this.status()=="available"){return"focused"}else{return this.style()}},blur:function(){return this.status()},seats:{}},u=function(t,n){return function(i){var s=this;s.settings=e.extend({status:"available",style:"available",data:n.seats[i.character]||{}},i);s.settings.$node=e("<div></div>");s.settings.$node.attr({id:s.settings.id,role:"checkbox","aria-checked":false,focusable:true,tabIndex:-1}).text(s.settings.label).addClass(["seatCharts-seat","seatCharts-cell","available"].concat(s.settings.classes,typeof n.seats[s.settings.character]=="undefined"?[]:n.seats[s.settings.character].classes).join(" "));s.data=function(){return s.settings.data};s.char=function(){return s.settings.character};s.node=function(){return s.settings.$node};s.style=function(){return arguments.length==1?function(e){var t=s.settings.style;if(e==t){return t}s.settings.status=e!="focused"?e:s.settings.status;s.settings.$node.attr("aria-checked",e=="selected");n.animate?s.settings.$node.switchClass(t,e,200):s.settings.$node.removeClass(t).addClass(e);return s.settings.style=e}(arguments[0]):s.settings.style};s.status=function(){return s.settings.status=arguments.length==1?s.style(arguments[0]):s.settings.status};(function(i,o,u){e.each(["click","focus","blur"],function(e,a){s[a]=function(){if(a=="focus"){if(t.attr("aria-activedescendant")!==undefined){r[t.attr("aria-activedescendant")].blur()}t.attr("aria-activedescendant",u.settings.id);u.node().focus()}return s.style(typeof i[o][a]==="function"?i[o][a].apply(u):n[a].apply(u))}})})(n.seats,s.settings.character,s);s.node().on("click",s.click).on("mouseenter",s.focus).on("mouseleave",s.blur).on("keydown",function(e,n){return function(i){var s;switch(i.which){case 32:i.preventDefault();e.click();break;case 40:case 38:i.preventDefault();s=function o(e,t,r){var u;if(!e.index(r)&&i.which==38){u=e.last()}else if(e.index(r)==e.length-1&&i.which==40){u=e.first()}else{u=e.eq(e.index(r)+(i.which==38?-1:+1))}s=u.find(".seatCharts-seat,.seatCharts-space").eq(t.index(n));return s.hasClass("seatCharts-space")?o(e,t,u):s}(n.parents(".seatCharts-container").find(".seatCharts-row:not(.seatCharts-header)"),n.parents(".seatCharts-row:first").find(".seatCharts-seat,.seatCharts-space"),n.parents(".seatCharts-row:not(.seatCharts-header)"));if(!s.length){return}e.blur();r[s.attr("id")].focus();s.focus();t.attr("aria-activedescendant",s.attr("id"));break;case 37:case 39:i.preventDefault();s=function(e){if(!e.index(n)&&i.which==37){return e.last()}else if(e.index(n)==e.length-1&&i.which==39){return e.first()}else{return e.eq(e.index(n)+(i.which==37?-1:+1))}}(n.parents(".seatCharts-container:first").find(".seatCharts-seat:not(.seatCharts-space)"));if(!s.length){return}e.blur();r[s.attr("id")].focus();s.focus();t.attr("aria-activedescendant",s.attr("id"));break;default:break}}}(s,s.node()))}}(n,o);n.addClass("seatCharts-container");e.extend(true,o,t);o.naming.rows=o.naming.rows||function(e){var t=[];for(var n=1;n<=e;n++){t.push(n)}return t}(o.map.length);o.naming.columns=o.naming.columns||function(e){var t=[];for(var n=1;n<=e;n++){t.push(n)}return t}(o.map[0].split("").length);if(o.naming.top){var a=e("<div></div>").addClass("seatCharts-row seatCharts-header");if(o.naming.left){a.append(e("<div></div>").addClass("seatCharts-cell"))}e.each(o.naming.columns,function(t,n){a.append(e("<div></div>").addClass("seatCharts-cell").text(n))})}n.append(a);e.each(o.map,function(t,s){var a=e("<div></div>").addClass("seatCharts-row");if(o.naming.left){a.append(e("<div></div>").addClass("seatCharts-cell seatCharts-space").text(o.naming.rows[t]))}e.each(s.match(/[a-z_]{1}(\[[0-9a-z_]{0,}(,[0-9a-z_ ]+)?\])?/gi),function(n,s){var f=s.match(/([a-z_]{1})(\[([0-9a-z_ ,]+)\])?/i),l=f[1],c=typeof f[3]!=="undefined"?f[3].split(","):[],h=c.length?c[0]:null,p=c.length===2?c[1]:null;a.append(l!="_"?function(e){o.seats[l]=l in o.seats?o.seats[l]:{};var s=h?h:e.getId(l,e.rows[t],e.columns[n]);r[s]=new u({id:s,label:p?p:e.getLabel(l,e.rows[t],e.columns[n]),row:t,column:n,character:l});i.push(s);return r[s].node()}(o.naming):e("<div></div>").addClass("seatCharts-cell seatCharts-space"))});n.append(a)});o.legend.items.length?function(t){var r=(t.node||e("<div></div").insertAfter(n)).addClass("seatCharts-legend");var i=e("<ul></ul>").addClass("seatCharts-legendList").appendTo(r);e.each(t.items,function(t,n){i.append(e("<li></li>").addClass("seatCharts-legendItem").append(e("<div></div>").addClass(["seatCharts-seat","seatCharts-cell",n[1]].concat(o.classes,typeof o.seats[n[0]]=="undefined"?[]:o.seats[n[0]].classes).join(" "))).append(e("<span></span>").addClass("seatCharts-legendDescription").text(n[2])))});return r}(o.legend):null;n.attr({tabIndex:0});n.focus(function(){if(n.attr("aria-activedescendant")){r[n.attr("aria-activedescendant")].blur()}n.find(".seatCharts-seat:not(.seatCharts-space):first").focus();r[i[0]].focus()});n.data("seatCharts",{seats:r,seatIds:i,status:function(){var t=this;return arguments.length==1?t.seats[arguments[0]].status():function(n,r){return typeof n=="string"?t.seats[n].status(r):function(){e.each(n,function(e,n){t.seats[n].status(r)})}()}(arguments[0],arguments[1])},each:function(e){var t=this;for(var n in t.seats){if(false===e.call(t.seats[n],n)){return n}}return true},node:function(){var t=this;return e("#"+t.seatIds.join(",#"))},find:function(e){var t=this;var n=t.set();return e.length==1?function(e){t.each(function(){if(this.char()==e){n.push(this.settings.id,this)}});return n}(e):function(){return e.indexOf(".")>-1?function(){var r=e.split(".");t.each(function(e){if(this.char()==r[0]&&this.status()==r[1]){n.push(this.settings.id,this)}});return n}():function(){t.each(function(){if(this.status()==e){n.push(this.settings.id,this)}});return n}()}()},set:function f(){var t=this;return{seats:[],seatIds:[],length:0,status:function(){var t=arguments,n=this;return this.length==1&&t.length==0?this.seats[0].status():function(){e.each(n.seats,function(){this.status.apply(this,t)})}()},node:function(){return t.node.call(this)},each:function(){return t.each.call(this,arguments[0])},get:function(){return t.get.call(this,arguments[0])},find:function(){return t.find.call(this,arguments[0])},set:function(){return f.call(t)},push:function(e,t){this.seats.push(t);this.seatIds.push(e);++this.length}}},get:function(t){var n=this;return typeof t=="string"?n.seats[t]:function(){var r=n.set();e.each(t,function(e,t){if(typeof n.seats[t]==="object"){r.push(t,n.seats[t])}});return r}()}});return n.data("seatCharts")}})(jQuery)
 
 /***/ })
 /******/ ]);

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="/movieAction/insertDianYing" method="post" enctype="multipart/form-data" >
+			<div class="">
+				电影名<input type="text" name="movie_name" id="movie_name" value="" />
+			</div>
+			<div class="">
+				电影简介<input type="text" name="movie_jianjie" id="movie_longtime" value="" />
+			</div>
+			<div class="">
+				放映日期<input type="text" name="fangyingriqi" id="movie_zhuyan" value="" />
+			</div>
+			<div class="">
+			    <label class="" for="shenfen">图片</label>
+			    <div class="">
+			    	<input type="file" name="inputFile" multiple="multiple" id="shenfen" style="display: none" onchange="change()" multiple=multiple>
+			    	<label for="shenfen">
+			    		<img src="/img/jiaHao.png" id="preview" name="pic" style="width:70px;height:70px;">
+			    	</label>
+			    </div>
+			</div>
+
+			
+            
+			<div class="">
+				<input class="btn btn-info" type="submit" value="开始添加" onclick="tianjia()"/>
+				<input class="btn btn-info" type="reset" name="chongzhi" id="chongzhi" value="重置" />
+				<a class="btn btn-success" href="/dianyingAction/dianyinglist">我是首页</a>
+			</div>	
+		</form>
+	</body>
+</html>

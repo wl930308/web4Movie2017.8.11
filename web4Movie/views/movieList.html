@@ -1,33 +1,27 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="UTF-8">
 		<title></title>
+
 	<link href="http://localhost:3000/css/movieList.css" rel="stylesheet"></head>
+
 	<body>
-		<table class="table table-responsive table-striped table-hover" border="1">
-    <!--bg-primary 背景变蓝-->
-	    <thead class="bg-primary">
-		    <th><input type="checkbox">全选</th>
-		    <th>电影名</th> 
-		    <th>电影简介</th>
-		    <th>放映日期</th>
-		    <th>图片</th>
-		    <th>操作</th>
-	    </thead>
-	    <tbody>
-	    <tr>
-	        <td><input type="checkbox" /></td>
-	        <td ></td>
-	        <td ></td>
-	        <td ></td>
-	        <td><img style="width: 100px;height: 100px"></td>
-	        <td ><a href="">修改</a> | <a href="">删除</a></td>
-	        <button class="btn btn-primary pull-right">添加</button>
-            <button class="btn btn-danger pull-right">多删</button>
-	    </tr>
-    </tbody>
-</table>
-	<script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
+		<table class="table" id="a">
+			<tr>
+				<th><input type="checkbox" id="quanxuan" onclick="quanxuan()">全选</th>
+				<th>电影名</th>
+				<th>电影简介</th>
+				<th>放映日期</th>
+				<th>电影图片</th>
+				<th>操作</th>
+			</tr>
+
+		</table>
+		<button class="btn btn-danger" onclick="tianjia()">添加电影</button>
+		<button class="btn btn-danger" onclick="shanChuManyDianYing()">删除多个电影</button>
+
 	<script type="text/javascript" src="http://localhost:3000/js/movieList.js"></script></body>
+
 </html>

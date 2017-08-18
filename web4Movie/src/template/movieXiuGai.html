@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="/movieAction/dianyingxiugai" method="post" enctype="multipart/form-data" >
+			<div class="">
+				电影名<input type="text" name="movie_name" id="movie_name" value="<%=jieGuo.movie_name%>" />
+			</div>
+			<div class="">
+				电影简介<input type="text" name="movie_jianjie" id="movie_jianjie" value="<%=jieGuo.movie_jianjie%>" />
+			</div>
+			<div class="">
+				放映日期<input type="text" name="fangyingriqi" id="fangyingriqi" value="<%=jieGuo.fangyingriqi%>" />
+			</div>
+			<!--电影图片-->
+            <div class="">
+			    <label class="" for="shenfen">图片</label>
+			    <div class="">
+			    	<input type="file" name="inputFile" multiple="multiple" id="shenfen" style="display: none" onchange="change()" multiple=multiple>
+			    	<label for="shenfen">
+			    		<img src="<%=jieGuo.movie_photo%>" id="preview" name="pic" style="width:70px;height:70px;">
+			    	</label>
+			    </div>
+			</div>
+              <!--隐藏域传id  id为修改的条件-->
+                <input type=hidden name="photoBeiYong"  value="<%=jieGuo.movie_photo%>">
+                <input type="hidden" name="movie_id" value="<%= jieGuo.movie_id %>">
+			<div class="">
+				<input class="btn btn-info" type="submit" value="提交修改" />
+				<input class="btn btn-info" type="reset" name="chongzhi" id="chongzhi" value="重置" />
+				<a class="btn btn-success" href="/dianyingAction/dianyinglist">我是首页</a>
+			</div>	
+		</form>
+	</body>
+</html>
