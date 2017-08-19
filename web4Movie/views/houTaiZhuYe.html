@@ -19,7 +19,7 @@
 			<!--导航主体-->
 			<div class="collapse navbar-collapse" id="daoHang">
 				<ul class="nav navbar-nav">
-					<li><a href="#">首页</a></li>
+					<li><a href="/">首页</a></li>
 					<li class="dropdown">
 						<a id="xiaLa" href="" data-toggle="dropdown">
 							个人中心
@@ -62,7 +62,10 @@
 					<div class="collapse lv-2" id="m3">
 						<li class="list-group-item"><a href="/movieAction/movieList" target="right">电影列表</a></li>
 					</div>
-					<li class="list-group-item">角色管理</li>
+					<li class="list-group-item" data-toggle="collapse" data-target="#m4">场次管理</li>
+					<div class="collapse lv-2" id="m4">
+						<li class="list-group-item"><a href="/changciAction/changciList" target="right">场次列表</a></li>
+					</div>
 					<li class="list-group-item">设备管理</li>
 					<li class="list-group-item" data-toggle="collapse" data-target="#m1">会议室管理</li>
 					<div class="collapse lv-2" id="m1">

@@ -41,10 +41,11 @@ var movieModel = function() {
 					fs.rename(oldPath, newPath, function(err) {
 						if(err) {
 							console.info(err)
-						} else {
-
-							console.log('rename OK');
 						}
+//						 else {
+//
+//							console.log('rename OK');
+//						}
 					})
 					cclj = "/files/" + inputFile.originalFilename;
 

@@ -81,5 +81,30 @@ var dao=function(){
 		})
 	};
 
+	//查询场次表（查里面的movie_id）
+	this.selectChangCi=function(client,callback){
+		client.query("SELECT * FROM changci",[],function(error,result){
+			callback(result)
+		})
+	};
+	//查询movie 表 movie_id
+	this.selectMovieId=function(client,callback){
+		client.query("SELECT movie_id FROM movie",[],function(error,result){
+			callback(reuslt)
+		})
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
 }
 module.exports=new dao();
