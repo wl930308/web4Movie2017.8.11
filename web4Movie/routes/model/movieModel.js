@@ -3,9 +3,10 @@ var multiparty = require("multiparty");
 var path = require("path");
 var fs = require("fs");
 var movieModel = function() {
+	
 	this.xiangQingPage = function(movieId, callback) {
 		var client = mysql.createServer();
-		mysql.selectXinXi(client, movieId, function(result) {
+		mysql.xiangQingPage(client, movieId, function(result) {
 			callback(result);
 		})
 	};
@@ -122,7 +123,27 @@ var movieModel = function() {
 
 			}
 		})
+	};
+	
+	this.selectFangYing=function(movieId,callback){
+		var client=mysql.createServer();
+		mysql.selectFangYing(client,movieId,function(result){
+			callback(result);
+		})
 	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }
 module.exports = new movieModel();

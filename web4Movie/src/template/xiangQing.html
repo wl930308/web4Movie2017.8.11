@@ -26,6 +26,7 @@
 				</div>
 			</div>
 			<div class="jianJieWrap" id="jianjie1" style="display: block;">
+				<input type="hidden" name="dangqianmovieid" id="dangqianmovieid" value="<%=movies.movie_id%>" />
 				<div class="jianJie">
 					<h3 class="content-title" id="cont_name"><%=movies.movie_name%></h3>
 					<i>(Wolf Warriors ‖)</i>
@@ -58,8 +59,8 @@
 							<img src="/img/jianJieRight.jpg"/>
 							<span>20</span>
 						</a>
-						<a href="" class="cont-right1">
-							<div   id="bofang">
+						<a href="javascript:void(0)" class="cont-right1">
+							<div   id="bofang" >
 								<video id="shipin" width="160" height="110"   poster="/img/jianJieRight3.jpg">
 								    <source src="/img/movie.mp4" type="video/mp4">
 								</video>
@@ -145,7 +146,7 @@
 				<a href="" class="moreXiangQing">查看影院详情></a>
 			</div>
 			<div class="shiJianDiDian">
-				<table border="" cellspacing="" cellpadding="" class="biaoGe">
+				<table border="" cellspacing="" cellpadding="" class="biaoGe" id="a" style="text-align: center;">
 					<thead>
 						<tr>
 							<th class="table-time">放映时间</th>
@@ -156,7 +157,7 @@
 							<th class="table-buy">选座购票</th>
 						</tr>
 					</thead>
-					<tbody>
+					<!--<tbody>
 						<tr>
 							<td class="table-time">
 								<em class="bold">16:50</em>
@@ -184,7 +185,7 @@
 								<a href="/movieAction/quXuanZuo" class="xuanZuoAnNiu">选坐购票</a>
 							</td>
 						</tr>
-					</tbody>
+					</tbody>-->
 				</table>
 			</div>
 			<div class="footKuang">

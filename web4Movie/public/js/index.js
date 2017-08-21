@@ -16008,7 +16008,7 @@ $("#cont_li6").on('mouseover',function(){
 	xuanZuo[4].style.display="none";
 })
 $.post("/indexAction/selectMovies",{},function(result){
-	var movies=result.movies
+	var movies=result.movies;
 	for(var i=0;i<movies.length;i++){
 		//获取div  
         var div = document.getElementById("movie_for");  

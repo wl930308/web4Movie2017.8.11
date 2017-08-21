@@ -52,3 +52,4 @@ $.post(url,data,function(data){
 			td5.appendChild(shanchu);
 		} // 这行是for循环结束
 },"json")
+

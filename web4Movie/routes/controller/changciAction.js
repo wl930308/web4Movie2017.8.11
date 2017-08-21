@@ -14,6 +14,7 @@ var changciAction=function(){
 				});
 		})
 	};
+	//跳转到添加场次页面
 	this.changCiTianJia=function(req,res){
 		res.render("changCiTianJia");
 	}
@@ -23,6 +24,27 @@ var changciAction=function(){
 			res.json({jieGuo:result});
 		})
 	}
+	//执行添加场次
+	this.insertChangCi=function(req,res){
+		var movieNews=req.body.movieNews;
+		changciModel.insertChangCi(movieNews,function(result){
+			if(result==1){
+				res.json({result:result});
+			}
+					
+		})
+	};
+	// 删除单个场次
+	this.deleteOneChangCi = function(req, res) {
+		var id = req.query.id;
+		changciModel.deleteOneChangCi(id, function(result) {
+			if(result == 1) {
+				res.redirect("/changciAction/changciList");
+			} else {
+				res.render("error");
+			}
+		})
+	};
 
 
 

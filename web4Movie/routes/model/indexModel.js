@@ -1,12 +1,15 @@
 var mysql=require("../database/dbConnect.js");
 var indexModel=function(){
+	//查询电影表
 	this.selectMovies=function(callback){
-		console.info(222);
 		var client=mysql.createServer();
-//		console.log(333);
 		mysql.selectMovies(client,function(result){
 			callback(result);
 		})
 	}
+	
+	
+	
+	
 }
 module.exports=new indexModel();

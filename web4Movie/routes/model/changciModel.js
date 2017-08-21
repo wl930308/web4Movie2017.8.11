@@ -17,6 +17,20 @@ var changciModel=function(){
 			callback(result);
 		})
 	};
+	this.insertChangCi=function(movieNews,callback){
+		var client=mysql.createServer();
+		mysql.insertChangCi(client,movieNews,function(result){
+			callback(result);
+		})
+	};
+	//删除单个场次
+	this.deleteOneChangCi = function(id, callback) {
+		var client = mysql.createServer();
+		mysql.deleteOneChangCi(client, id, function(result) {
+			callback(result);
+		})
+	};
+
 	
 	
 	

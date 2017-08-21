@@ -7,21 +7,25 @@
 		<title></title>
 
 	</head>
+	<style type="text/css">
+		table th{
+			text-align: center;
+		}
+	</style>
 
 	<body>
-		<table class="table" id="a">
+		<table class="table table-hover" id="a" style="text-align: center;">
 			<tr style="background-color:#FAC100; font-size: 26px;color: white";>
 				<th><input type="checkbox" id="quanxuan" onclick="quanxuan()">全选</th>				
 				<th>电影id</th>
 				<th>放映时间</th>
-				<th>价格</th>
+				<th>价格（¥）</th>
 				<th>放映厅</th>
 				<th>操作</th>
 			</tr>
 
 		</table>
 		<button class="btn btn-danger" onclick="tianjia()">添加场次</button>
-		<button class="btn btn-danger" onclick="shanChuManyDianYing()">删除多个场次</button>
 
 	</body>
 

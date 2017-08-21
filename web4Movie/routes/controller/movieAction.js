@@ -1,17 +1,21 @@
 var movieModel = require("../model/movieModel");
 var movieAction = function() {
+	//index.js页面的请求 （点击超链接图片时）
 	this.xiangQingPage = function(req, res) {
 		var movieId = req.query.id;
 		movieModel.xiangQingPage(movieId, function(result) {
-			console.log(result)
-			res.render("xiangQing", {
+			res.render("xiangQing",{movies:result});
+			
+
+		})
+	};
+	this.selectdianying=function(req,res){
+		movieModel.selectDianYing(function(result) {
+			res.json({
+				resultCode: 1,
 				movies: result
 			});
 		})
-
-	}
-	this.xuanzuoPage = function(req, res) {
-		res.render("xuanzuoPage")
 	}
 	this.quXuanZuo = function(req, res) {
 		res.render("xuanzuoPage")
@@ -91,5 +95,16 @@ var movieAction = function() {
 
 		})
 	};
+	this.selectFangYing=function(req,res){
+		var movieId=req.body.movieId;
+		movieModel.selectFangYing(movieId,function(result){
+			res.json({dataCode:result});
+		})
+	}
+	
+
+	
+	
+	
 }
 module.exports = new movieAction();
