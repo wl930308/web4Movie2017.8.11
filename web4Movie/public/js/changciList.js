@@ -15880,7 +15880,6 @@ __webpack_require__(8);
 __webpack_require__(21);
 
 tianjia = function() {
-	alert(1);
 	location.href = "/changciAction/changCiTianJia";
 };
 

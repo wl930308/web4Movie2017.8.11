@@ -4,7 +4,6 @@ require("bootstrap");
 require("bootstrap-loader");
 
 tianjia = function() {
-	alert(1);
 	location.href = "/changciAction/changCiTianJia";
 };
 

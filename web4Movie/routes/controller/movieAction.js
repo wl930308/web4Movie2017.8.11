@@ -1,17 +1,21 @@
-var movieModel=require("../model/movieModel");
-var movieAction=function(){
-	this.xiangQingPage=function(req,res){
-		var movieId=req.query.id;
-		movieModel.xiangQingPage(movieId,function(result){
+var movieModel = require("../model/movieModel");
+var movieAction = function() {
+	this.xiangQingPage = function(req, res) {
+		var movieId = req.query.id;
+		movieModel.xiangQingPage(movieId, function(result) {
 			console.log(result)
-			res.render("xiangQing",{movies:result});
+			res.render("xiangQing", {
+				movies: result
+			});
 		})
-		
+
 	}
-	this.xuanzuoPage=function(req,res){
+	this.xuanzuoPage = function(req, res) {
 		res.render("xuanzuoPage")
 	}
-	
+	this.quXuanZuo = function(req, res) {
+		res.render("xuanzuoPage")
+	}
 	//跳转页面
 	this.movieList = function(req, res) {
 		res.render("movieList");
@@ -87,8 +91,5 @@ var movieAction=function(){
 
 		})
 	};
-	
-	
 }
-module.exports=new movieAction();
-
+module.exports = new movieAction();
