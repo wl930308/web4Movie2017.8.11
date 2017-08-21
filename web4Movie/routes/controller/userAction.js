@@ -14,13 +14,19 @@ var userAction=function(){
 	}
 	//用户注册的提交动作
 	this.userZhuCe=function(req,res){
-		var user=req.body;
-		userModel.userZhuCe(user,function(result){
+		userModel.userZhuCe(req,res,function(result){
 			if(result==1){
 				res.render("success",{title:"恭喜您注册成功"})
 			}else{
 				res.render("error",{title:"注册失败，请重新注册"})
 			}
+		})
+	}
+	//验证注册的用户名是否重复
+	this.zhuCeYanZheng=function(req,res){
+		var userName=req.body.userName;
+		userModel.zhuCeYanZheng(userName,function(result){
+			res.json({resultCode:result})
 		})
 	}
 	//教师登录
@@ -30,11 +36,20 @@ var userAction=function(){
 		var password=req.body.password;
 		userModel.jiaoShiDengLuDongZuo(userName,password,function(result){
 			if(result.shu==1){
-				res.render("houTaiZhuYe")
+				req.session.regenerate(function(error){//初始化session
+					req.session.userId=result.user_id;
+					req.session.userName=result.user_name;
+					res.render("houTaiZhuYe",{dangQianUserName:result.user_name})
+				})
 			}else{
 				res.render("error")
 			}
 		})
+	}
+	//退出并销毁session
+	this.tuiChu=function(req,res){
+		req.session.destroy();
+		res.redirect("/");
 	}
 	//查询所有用户
 	this.selectUserS=function(req,res){
@@ -46,9 +61,59 @@ var userAction=function(){
 	this.userInsertPage=function(req,res){
 		res.render("userInsertPage")
 	}
-	//跳到用户修改页面
+	//用户添加
+	this.userInsert=function(req,res){
+		userModel.userInsert(req,res,function(result){
+			if(result==1){
+				res.redirect("userList")
+			}else{
+				res.render("error")
+			}
+		})
+	}
+	//通过ID查询用户，跳到用户修改页面
 	this.userEditPage=function(req,res){
-		res.render("userEditPage")
+		var userId=req.query.id;
+		userModel.userEditPage(userId,function(result){
+			res.render("userEditPage",{result:result})
+		})
+	}
+	//用户修改动作
+	this.userEdit=function(req,res){
+		userModel.userEdit(req,res,function(result){
+			if(result==1){
+				res.redirect("userList")
+			}else{
+				res.render("error")
+			}
+		})
+	}
+	//删除用户(单删)
+	this.deleteUser=function(req,res){
+		var userId=req.query.id;
+		userModel.deleteUser(userId,function(result){
+			if(result==1){
+				res.redirect("userList")
+			}else{
+				res.render("error")
+			}
+		})
+	}
+	//删除用户(多删)
+	this.deleteManyUser=function(req,res){
+		var userIdSStr=req.body.userIdSStr;
+		var userIdSStr=userIdSStr.split(",");
+		userModel.deleteManyUser(userIdSStr,function(result){
+			if(result==userIdSStr.length){
+				res.json({resultCode:1});
+			}else{
+				res.json({resultCode:0});
+			}
+		})
+	}
+	//查询当前用户
+	this.selectDangQianUser=function(req,res){
+		console.log(req.body)
 	}
 }
 module.exports=new userAction();

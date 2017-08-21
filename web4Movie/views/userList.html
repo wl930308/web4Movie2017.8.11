@@ -5,23 +5,21 @@
     <title>Title</title>
 <link href="http://localhost:3000/css/userList.css" rel="stylesheet"></head>
 <body>
-    <table class="table table-responseive table-striped table-hover" border="1">
-        <thead id="userS" class="bg-primary">
-            <th><input type="checkbox">全选</th>
+    <table class="table table-responseive table-striped table-hover" border="1" id="userS">
+        <thead class="bg-primary" id="aaa">
+            <th><input type="checkbox" id="quanXuan" onclick="quanXuan()">全选</th>
             <th>用户ID</th>
-            <th>帐号</th>
+            <!--<th>帐号</th>-->
             <th>用户名</th>
             <th>用户密码</th>
             <th>邮箱</th>
             <th>用户类型</th>
+            <th>图片</th>
             <th>手机号</th>
             <th>操作</th>
+            <th><button class="btn btn-primary" onclick="tianJiaUser()">添加</button><button class="btn btn-primary" onclick="deleteManyUser()">多删</button></th>
         </thead>
-        <tbody>
-            <tr>
-            	
-            </tr>
-        </tbody>
+        <tr></tr>
     </table>
     <script src="/socket.io/socket.io.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="http://localhost:3000/js/userList.js"></script></body>

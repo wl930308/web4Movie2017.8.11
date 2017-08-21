@@ -19,7 +19,7 @@
 			<!--导航主体-->
 			<div class="collapse navbar-collapse" id="daoHang">
 				<ul class="nav navbar-nav">
-					<li><a href="/">首页</a></li>
+					<li><a href="#">首页</a></li>
 					<li class="dropdown">
 						<a id="xiaLa" href="" data-toggle="dropdown">
 							个人中心
@@ -37,7 +37,13 @@
 				<form action="" class="navbar-form navbar-right">
 					<div class="form-group">
 						<div class="input-group">
-							<span class="glyphicon glyphicon-user" style="color: white; margin-right: 15px;">leo</span>
+							<span class="glyphicon glyphicon-user" style="color: white; margin-right: 15px;"></span>
+							
+							<span style="color: white;">
+								当前用户:<%=dangQianUserName%>&nbsp;<a href="/userAction/tuiChu">退出</a>
+							</span>
+							
+							
 							<div class="input-group">
 								<input type="text" placeholder="请输入搜索内容" class="form-control" />
 							</div>							
@@ -62,6 +68,7 @@
 					<div class="collapse lv-2" id="m3">
 						<li class="list-group-item"><a href="/movieAction/movieList" target="right">电影列表</a></li>
 					</div>
+				
 					<li class="list-group-item" data-toggle="collapse" data-target="#m4">场次管理</li>
 					<div class="collapse lv-2" id="m4">
 						<li class="list-group-item"><a href="/changciAction/changciList" target="right">场次列表</a></li>

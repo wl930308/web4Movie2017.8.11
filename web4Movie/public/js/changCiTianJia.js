@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 53);
+/******/ 	return __webpack_require__(__webpack_require__.s = 47);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15873,25 +15873,39 @@ __webpack_require__ (41);
 /* 44 */,
 /* 45 */,
 /* 46 */,
-/* 47 */,
-/* 48 */,
-/* 49 */,
-/* 50 */,
-/* 51 */,
-/* 52 */,
-/* 53 */
+/* 47 */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(54);
 __webpack_require__(2);
-__webpack_require__(8);
+__webpack_require__(48);
+__webpack_require__(8); 
 __webpack_require__(21);
 
-$("#xiaLa").dropdown();
+
+var url="/changciAction/selectMovieId";
+var data={};
+$.post(url,data,function(result){
+	
+	var sel=document.getElementById("movieIdXiaLa");
+	var dianyingming=document.getElementById("dianyingming");
+	for(var i=0;i<result.jieGuo.length;i++){
+		console.log(result.jieGuo[i].movie_name);
+		var option=document.createElement("option");		
+		option.innerHTML="<span>"+result.jieGuo[i].movie_name+"</span>"+":"+"id:"+result.jieGuo[i].movie_id;
+		
+	sel.appendChild(option);
+		
+		
+		
+	}
+},"json")
+
+
+
 
 
 /***/ }),
-/* 54 */
+/* 48 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

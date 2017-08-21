@@ -3,9 +3,10 @@ require("../css/changciList.css");
 require("bootstrap");
 require("bootstrap-loader");
 
-tianjia=function(){
-	location.href="selectMovieId";
-}
+tianjia = function() {
+	alert(1);
+	location.href = "/changciAction/changCiTianJia";
+};
 
 var url='/changciAction/selectChangCi';
 var data={};

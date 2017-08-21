@@ -12,11 +12,12 @@
             <h5>带星号的是必填项</h5>
         </div>
         <div class="col-md-6 col-md-offset-3">
-            <form role="form" class="form form-horizontal" name="userZhuCe" action="/userAction/userZhuCe" method="post">
+            <form role="form" class="form form-horizontal" name="userZhuCe" action="/userAction/userZhuCe" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-                    <label for="zhangHao" class="col-md-2 text-right">账号<span style="color: red;">*</span></label>
+                    <label for="userName" class="col-md-2 text-right">账号<span style="color: red;">*</span></label>
                     <div class="col-md-10">
-                        <input type="text" class="form-control col-md-9" required name="userName" id="zhangHao"/>
+                        <input type="text" class="form-control col-md-9" required name="userName" id="userName"/>
+                        <span id="yanZheng">用户名已重复，请重新输入</span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -38,12 +39,14 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-md-2 text-right" for="shenfen">图片</label>
-                    <div class="col-md-10">
-                        <input type="file" name="inputFile" multiple="multiple" id="shenfen" onchange="change()">
-                        <img src="" alt="" id="preview" name="phoneP">
-                    </div>
-                </div>
+				    <label class="col-md-2 text-right" for="shenfen">图片</label>
+				    <div class="col-md-10">
+				    	<input type="file" name="inputFile" multiple="multiple" id="shenfen" style="display: none" onchange="change()">
+				    	<label for="shenfen">
+				    		<img src="/img/jiaHao.png" id="preview" name="phoneP" style="width:70px;height:70px;">
+				    	</label>
+				    </div>
+				</div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary">提交</button>
                     <button type="reset" class="btn btn-danger">清空</button>

@@ -14,10 +14,13 @@ var changciAction=function(){
 				});
 		})
 	};
+	this.changCiTianJia=function(req,res){
+		res.render("changCiTianJia");
+	}
 	//查询movie_id
 	this.selectMovieId=function(req,res){
 		changciModel.selectMovieId(function(result){
-			res.json({resultCode: 1,jieGuo: result});
+			res.json({jieGuo:result});
 		})
 	}
 

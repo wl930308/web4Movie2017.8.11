@@ -1,5 +1,11 @@
 .beiJing{
-            background-image: url(/img/timg1.jpg);
-            background-repeat: no-repeat;
-            background-size: 1536px 880px;
-        }
+    background-image: url(/img/timg1.jpg);
+    background-repeat: no-repeat;
+    background-size: 1536px 880px;
+}
+#yanZheng{
+	display: none;
+	font-size: 16px;
+	color: blue;
+	font-family: "楷体";
+}

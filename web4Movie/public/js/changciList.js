@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "http://localhost:3000";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 44);
+/******/ 	return __webpack_require__(__webpack_require__.s = 45);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -15870,17 +15870,19 @@ __webpack_require__ (41);
 /***/ }),
 /* 42 */,
 /* 43 */,
-/* 44 */
+/* 44 */,
+/* 45 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(2);
-__webpack_require__(45);
+__webpack_require__(46);
 __webpack_require__(8);
 __webpack_require__(21);
 
-tianjia=function(){
-	location.href="selectMovieId";
-}
+tianjia = function() {
+	alert(1);
+	location.href = "/changciAction/changCiTianJia";
+};
 
 var url='/changciAction/selectChangCi';
 var data={};
@@ -15930,7 +15932,7 @@ $.post(url,data,function(data){
 
 
 /***/ }),
-/* 45 */
+/* 46 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
