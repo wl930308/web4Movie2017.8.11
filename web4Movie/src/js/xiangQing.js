@@ -14,13 +14,17 @@ $("#hui").on('click',function(){
 	$("#jianjie2").css('display','none'); 
 })
 
+//$("#bofang").click(function(){
+//	alert(1)
+//})
 
-dianji=function(){
+$("#bofang").click(function(){
 	
 	var video=document.getElementById("shipin");
 	var bofang=document.getElementById("bofang");
 	var anniu=document.getElementById("anniu");
-	 if(video.pause()==true) {
+	console.info(video.paused)
+	 if(video.paused) {
       	video.play();
     	anniu.style.opacity="0";
     }else {
@@ -28,8 +32,8 @@ dianji=function(){
         video.pause();
         
      }
-//	return false;
-}
+	return false;
+})
 //这个是ajax 查询电影表里的数据
 $.post("/movieAction/selectdianying",{},function(result){
 	var movies=result.movies;
