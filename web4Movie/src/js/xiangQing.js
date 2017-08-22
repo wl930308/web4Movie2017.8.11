@@ -13,11 +13,7 @@ $("#hui").on('click',function(){
 	$("#jianjie1").css('display','block'); 
 	$("#jianjie2").css('display','none'); 
 })
-
-//$("#bofang").click(function(){
-//	alert(1)
-//})
-
+//下面是播放视频
 $("#bofang").click(function(){
 	
 	var video=document.getElementById("shipin");
